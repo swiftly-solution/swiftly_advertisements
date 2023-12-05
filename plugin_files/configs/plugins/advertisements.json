@@ -1,0 +1,19 @@
+{
+    "messages": [
+        {
+            "message": "test message - 5 seconds",
+            "interval": 5000,
+            "type": "chat"
+        },
+        {
+            "message": "test message - 0.5 seconds",
+            "interval": 500,
+            "type": "chat"
+        },
+        {
+            "message": "test message - 10 seconds",
+            "interval": 10000,
+            "type": "center"
+        }
+    ]
+}
