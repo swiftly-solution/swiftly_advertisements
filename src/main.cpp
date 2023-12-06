@@ -117,8 +117,6 @@ void LoadAdvertisements()
         else if (type == "notify")
             dest = HUD_PRINTNOTIFY;
 
-        print("%s\n", message);
-
         Advertisement *ad = new Advertisement(message, interval, dest);
         advertisements.push_back(ad);
     }
@@ -139,6 +137,7 @@ bool Advertisement::ShouldExecute(uint64_t time)
 
 void Advertisement::Execute()
 {
+    print("%s\n", this->m_message.c_str());
     std::vector<std::string> messages = explode(this->m_message, "\n");
     for (std::string msg : messages)
     {
