@@ -63,7 +63,6 @@ void OnGameTick(bool simulating, bool bFirstTick, bool bLastTick)
 void LoadAdvertisements()
 {
     uint32_t advs = config->FetchArraySize("advertisements.messages");
-    print("%d\n", advs);
 
     for (uint32_t i = 0; i < advs; i++)
     {
@@ -84,7 +83,6 @@ void LoadAdvertisements()
         }
 
         const char *message = config->Fetch<const char *>("advertisements.messages[%d].message", i);
-        print("Ad #%02d: %s\n", i, message);
         if (message == nullptr)
         {
             logger->Write(LOGLEVEL_ERROR, "Couldn't load advertisement #%d because the message is not a string.", i);
@@ -112,6 +110,8 @@ void LoadAdvertisements()
             continue;
         }
 
+        print("Ad #%02d: %s\n", i, message);
+
         HudDestination dest = HUD_PRINTCONSOLE;
         if (type == "chat")
             dest = HUD_PRINTTALK;
@@ -120,7 +120,7 @@ void LoadAdvertisements()
         else if (type == "notify")
             dest = HUD_PRINTNOTIFY;
 
-        Advertisement *ad = new Advertisement(message, interval, dest);
+        Advertisement *ad = new Advertisement(std::string(message), interval, dest);
         advertisements.push_back(ad);
     }
 
