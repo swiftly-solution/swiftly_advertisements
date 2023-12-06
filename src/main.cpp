@@ -63,6 +63,8 @@ void OnGameTick(bool simulating, bool bFirstTick, bool bLastTick)
 void LoadAdvertisements()
 {
     uint32_t advs = config->FetchArraySize("advertisements.messages");
+    print("%d\n", advs);
+
     for (uint32_t i = 0; i < advs; i++)
     {
         if (!config->Exists("advertisements.messages[%d].message", i))
@@ -82,6 +84,7 @@ void LoadAdvertisements()
         }
 
         const char *message = config->Fetch<const char *>("advertisements.messages[%d].message", i);
+        print("Ad #%02d: %s\n", i, message);
         if (message == nullptr)
         {
             logger->Write(LOGLEVEL_ERROR, "Couldn't load advertisement #%d because the message is not a string.", i);
@@ -137,7 +140,6 @@ bool Advertisement::ShouldExecute(uint64_t time)
 
 void Advertisement::Execute()
 {
-    print("%s\n", this->m_message.c_str());
     std::vector<std::string> messages = explode(this->m_message, "\n");
     for (std::string msg : messages)
     {
