@@ -117,6 +117,8 @@ void LoadAdvertisements()
         else if (type == "notify")
             dest = HUD_PRINTNOTIFY;
 
+        print("%s\n", message);
+
         Advertisement *ad = new Advertisement(message, interval, dest);
         advertisements.push_back(ad);
     }
@@ -143,8 +145,6 @@ void Advertisement::Execute()
         msg = replace(msg, "{players}", std::to_string(g_playerManager->GetPlayers()));
         msg = replace(msg, "{maxplayers}", std::to_string(server->GetMaxPlayers()));
         msg = replace(msg, "{map}", server->GetMap());
-
-        print("On Execute: %s\n", msg.c_str());
 
         g_playerManager->SendMsg(this->m_type, msg.c_str());
     }
