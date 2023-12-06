@@ -35,16 +35,6 @@ void OnPluginStop()
     logger->Write(LOGLEVEL_DEBUG, "Plugin stopped.");
 }
 
-void OnMapLoad(const char *mapName)
-{
-    LoadAdvertisements();
-}
-
-void OnMapUnload(const char *mapName)
-{
-    UnloadAdvertisements();
-}
-
 void OnGameTick(bool simulating, bool bFirstTick, bool bLastTick)
 {
     uint64_t time = GetTime();
