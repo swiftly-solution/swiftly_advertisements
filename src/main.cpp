@@ -144,6 +144,8 @@ void Advertisement::Execute()
         msg = replace(msg, "{maxplayers}", std::to_string(server->GetMaxPlayers()));
         msg = replace(msg, "{map}", server->GetMap());
 
+        print("On Execute: %s\n", msg.c_str());
+
         g_playerManager->SendMsg(this->m_type, msg.c_str());
     }
 
