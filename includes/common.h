@@ -1,13 +1,15 @@
 #ifndef _common_h
 #define _common_h
+#pragma once
 
-#include <swiftly/swiftly.h>
 #include <vector>
 #include <string>
 
 void LoadAdvertisements();
 void UnloadAdvertisements();
 void ExecuteAdvertisementsCheck();
+
+enum HudDestination;
 
 class Advertisement
 {
@@ -26,5 +28,6 @@ public:
 
 extern std::vector<Advertisement *> advertisements;
 std::string replace(std::string str, const std::string from, const std::string to);
+std::vector<std::string> explode(std::string s, std::string delimiter);
 
 #endif
