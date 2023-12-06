@@ -15,10 +15,10 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                os: [self-hosted, windows-latest]
+                os: [ubuntu-latest, windows-latest]
                 include:
                     - os: windows-latest
-                    - os: self-hosted
+                    - os: ubuntu-latest
                       container: registry.gitlab.steamos.cloud/steamrt/sniper/sdk
 
         steps:
@@ -45,7 +45,7 @@ jobs:
                   make
 
             - name: Upload Files - Linux
-              if: matrix.os == 'self-hosted'
+              if: matrix.os == 'ubuntu-latest'
               uses: actions/upload-artifact@v3
               with:
                   name: swiftly_advertisements Plugin - Linux
