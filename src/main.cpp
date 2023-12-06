@@ -71,7 +71,7 @@ void LoadAdvertisements()
             logger->Write(LOGLEVEL_ERROR, "Couldn't load advertisement #%d because the type is not present in configuration file.", i);
             continue;
         }
-
+        config->Fetch<const char *>("advertisements.messages[%d].message", i);
         const char *message = config->Fetch<const char *>("advertisements.messages[%d].message", i);
         if (message == nullptr)
         {
