@@ -101,8 +101,6 @@ void LoadAdvertisements()
             continue;
         }
 
-        print("Ad #%02d: %s\n", i, mmsg.c_str());
-
         HudDestination dest = HUD_PRINTCONSOLE;
         if (type == "chat")
             dest = HUD_PRINTTALK;
