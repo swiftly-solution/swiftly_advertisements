@@ -48,7 +48,7 @@ Example:
 }
 ```
 
-(!) Type can be just `center`/`chat`/`console`.
+**(!)** Type can be just `center`/`chat`/`console`.
 
 ### Configuring the plugin 🧐
 
