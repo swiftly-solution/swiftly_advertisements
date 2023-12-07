@@ -71,13 +71,14 @@ void LoadAdvertisements()
             logger->Write(LOGLEVEL_ERROR, "Couldn't load advertisement #%d because the type is not present in configuration file.", i);
             continue;
         }
-        config->Fetch<const char *>("advertisements.messages[%d].message", i);
+
         const char *message = config->Fetch<const char *>("advertisements.messages[%d].message", i);
         if (message == nullptr)
         {
             logger->Write(LOGLEVEL_ERROR, "Couldn't load advertisement #%d because the message is not a string.", i);
             continue;
         }
+        std::string mmsg = message;
 
         int interval = config->Fetch<int>("advertisements.messages[%d].interval", i);
         if (interval < 500)
@@ -100,7 +101,7 @@ void LoadAdvertisements()
             continue;
         }
 
-        print("Ad #%02d: %s\n", i, message);
+        print("Ad #%02d: %s\n", i, mmsg.c_str());
 
         HudDestination dest = HUD_PRINTCONSOLE;
         if (type == "chat")
@@ -110,7 +111,7 @@ void LoadAdvertisements()
         else if (type == "notify")
             dest = HUD_PRINTNOTIFY;
 
-        Advertisement *ad = new Advertisement(std::string(message), interval, dest);
+        Advertisement *ad = new Advertisement(mmsg, interval, dest);
         advertisements.push_back(ad);
     }
 
