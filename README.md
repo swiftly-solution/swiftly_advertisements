@@ -1,7 +1,6 @@
-<br/>
 <p align="center">
   <a href="https://github.com/swiftly-solution/swiftly_advertisements">
-    <img src="https://media.discordapp.net/attachments/979452783466000466/1168236894652469248/Swiftly_Logo.png?ex=6575f264&is=65637d64&hm=dd2834983bebeab98d7febd44bb3bd20e9aded13ecefac63cc990b222a9d9e9e&=&format=webp&quality=lossless&width=468&height=468" alt="Logo" width="80" height="80">
+    <img src="https://cdn.swiftlycs2.net/swiftly-logo.png" alt="SwiftlyLogo" width="80" height="80">
   </a>
 
   <h3 align="center">[Swiftly] Advertisements</h3>
@@ -9,14 +8,17 @@
   <p align="center">
     A simple plugin for Swiftly that sends messages on server at a specified time.
     <br/>
-    <br/>
-    <a href="https://github.com/swiftly-solution/swiftly_advertisements/issues">Report Bug</a>
-    .
-    <a href="https://github.com/swiftly-solution/swiftly_advertisements/issues">Request Feature</a>
   </p>
 </p>
 
-![Downloads](https://img.shields.io/github/downloads/swiftly-solution/swiftly_advertisements/total) ![Contributors](https://img.shields.io/github/contributors/swiftly-solution/swiftly_advertisements?color=dark-green) ![Issues](https://img.shields.io/github/issues/swiftly-solution/swiftly_advertisements) ![License](https://img.shields.io/github/license/swiftly-solution/swiftly_advertisements) 
+<p align="center">
+  <img src="https://img.shields.io/github/downloads/swiftly-solution/swiftly_advertisements/total" alt="Downloads"> 
+  <img src="https://img.shields.io/github/contributors/swiftly-solution/swiftly_advertisements?color=dark-green" alt="Contributors">
+  <img src="https://img.shields.io/github/issues/swiftly-solution/swiftly_advertisements" alt="Issues">
+  <img src="https://img.shields.io/github/license/swiftly-solution/swiftly_advertisements" alt="License">
+</p>
+
+---
 
 ### Installation 👀
 
@@ -48,7 +50,8 @@ Example:
 }
 ```
 
-**(!)** Type can be just `center`/`chat`/`console`.
+> [!WARNING]
+> Type can be just `center`/`chat`/`console`.
 
 ### Configuring the plugin 🧐
 
@@ -62,5 +65,7 @@ Example:
 4. Push to the Branch
 5. Open a Pull Request
 
-### Have ideas? 💡
-Join [Swiftly Discord Server](https://discord.gg/ESKNDx2CNB)!
+### Have ideas/Found bugs? 💡
+Join [Swiftly Discord Server](https://swiftlycs2.net/discord) and send a message in the topic from `📕╎plugins-sharing` of this plugin!
+
+---
